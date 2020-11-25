@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Django Study</h1>
+    <p class="lead">The first module for Django.</p>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for i in api %}
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.avatar_url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.login}}</h5>
+                    <p class="card-text">{{i.login}}' github</p>
+                    <a href="{{i.html_url}}" class="btn btn-primary">visit</a>
+                </div>
+            </div>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{%endblock%}
